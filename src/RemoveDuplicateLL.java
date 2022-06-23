@@ -12,19 +12,27 @@ public class RemoveDuplicateLL {
             this.next = null;
         }
     }
-
+    //method to remove the duplicate nodes from a sorted linked list
     public static Node removeDuplicate(Node head){
+        //if the head is null or its next then it will return head
         if(head==null||head.next==null){
             return head;
         }
+        //will need a current node to traverse as head cannot be updated over and over
         Node current = head;
+        //until current reaches zero
         while(current.next!=null){
+            //if in between the data of two consecutive nodes is equal
             if(current.data==current.next.data){
+                //update the next of current with next.next
                 current.next = current.next.next;
-            }else{
+            }
+            //if data are not equal then simply move forward to next
+            else{
                 current=current.next;
             }
-        }return head;
+        }// at the end it will retrun head
+        return head;
 
     }
     public static void main(String[] args) {
