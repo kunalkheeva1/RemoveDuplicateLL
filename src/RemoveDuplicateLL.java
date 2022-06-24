@@ -4,7 +4,8 @@
 import java.util.LinkedList;
 
 public class RemoveDuplicateLL {
-    class Node{
+
+   static class Node{
         int data;
         Node next;
         Node(int data){
@@ -35,14 +36,32 @@ public class RemoveDuplicateLL {
         return head;
 
     }
-    public static void main(String[] args) {
-        LinkedList<Integer> ll = new LinkedList<>();
-        ll.add(3);
-        ll.add(3);
-        ll.add(4);
-        ll.add(4);
-        ll.add(5);
-        System.out.println(ll);
+
+    public static void printll(Node ll){
+        while(ll!=null){
+            System.out.println(ll.data);
+            ll = ll.next;
+
+        }
+
 
     }
+    static Node head;
+    public static void main(String[] args) {
+
+      RemoveDuplicateLL ll = new RemoveDuplicateLL();
+      ll.head = new Node(10);
+        ll.head.next = new Node(10);
+        ll.head.next.next = new Node(11);
+
+
+      printll(head);
+        System.out.println(" ");
+      removeDuplicate(head);
+      printll(head);
+
+
+
+    }
+
 }
